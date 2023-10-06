@@ -1,7 +1,7 @@
 const RepositorieCliente = require('../repositories/cliente')
 const cliente = new RepositorieCliente()
 
-class ServiceCliente{
+class ServicoCliente{
 
     async GetCliente(id, transaction){
         if(isNaN(id)){
@@ -40,4 +40,4 @@ class ServiceCliente{
     }
 }
 
-module.exports = ServiceCliente
+module.exports = ServicoCliente

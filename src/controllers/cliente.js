@@ -1,10 +1,11 @@
-const ServiceCliente = require('../services/cliente')
-const service = new ServiceCliente()
+const ServicoCliente = require('../services/cliente.js')
+const servico = new ServicoCliente()
 
 class ControllerCliente{
     async GetCliente(req,res){
         try{
-            const resultado = await service.GetCliente(req.params.id)
+            const resultado = await servico.GetCliente(req.params.id)
+            console.log(resultado)
             res.status(200).json({
                 cliente: resultado
             })
@@ -18,7 +19,7 @@ class ControllerCliente{
 
     async GetClientes(_,res){
         try{
-            const resultado = await service.GetClientes()
+            const resultado = await servico.GetClientes()
             res.status(200).json({
                 clientes: resultado
             })
@@ -32,7 +33,7 @@ class ControllerCliente{
 
     async AddCliente(req,res){
         try{
-            const resultado = await service.AddCliente(req.body.nome, req.body.telefone)
+            const resultado = await servico.AddCliente(req.body.nome, req.body.telefone)
             res.status(200).json({
                 clientes: resultado
             })
@@ -46,7 +47,7 @@ class ControllerCliente{
 
     async UpdateCliente(req,res){
         try{
-            const resultado = await service.UpdateCliente(req.params.id, req.body.nome, req.body.telefone)
+            const resultado = await servico.UpdateCliente(req.params.id, req.body.nome, req.body.telefone)
             res.status(200).json({
                 cliente: resultado
             })
@@ -60,7 +61,7 @@ class ControllerCliente{
 
     async DeleteCliente(req,res){
         try{
-            const resultado = await service.DeleteCliente(req.params.id)
+            const resultado = await servico.DeleteCliente(req.params.id)
             res.status(200).json({
                 cliente: resultado
             })
@@ -74,7 +75,7 @@ class ControllerCliente{
 
     async GetCachorrosCliente(req,res){
         try{
-            const resultado = await service.GetCachorrosCliente(req.params.id)
+            const resultado = await servico.GetCachorrosCliente(req.params.id)
             res.status(200).json({
                 cachorros: resultado
             })

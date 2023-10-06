@@ -1,7 +1,7 @@
-const RepositorieCachorro = require('../repositories/cachorro')
+const RepositorieCachorro = require('../repositories/cachorro.js')
 const repositorie = new RepositorieCachorro()
 
-class ServiceCachorro{
+class ServicoCachorro{
 
     async GetCachorro(id){
         if(isNaN(id)){
@@ -33,4 +33,4 @@ class ServiceCachorro{
     }
 }
 
-module.exports = ServiceCachorro
+module.exports = ServicoCachorro

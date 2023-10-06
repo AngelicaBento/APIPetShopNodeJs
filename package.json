@@ -19,5 +19,16 @@
   "devDependencies": {
     "jest": "^29.7.0",
     "nodemon": "^3.0.1"
-  }
+  },
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AngelicaBento/APIPetShopNodeJs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AngelicaBento/APIPetShopNodeJs/issues"
+  },
+  "homepage": "https://github.com/AngelicaBento/APIPetShopNodeJs#readme"
 }

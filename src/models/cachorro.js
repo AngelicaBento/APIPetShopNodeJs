@@ -1,8 +1,11 @@
-const conexao = require('../database.js')
+const Cliente = require('./cliente.js')
 const { DataTypes } = require('sequelize');
+const conexao = require('../database.js')
 
-const Cachorro = conexao.define('cachorro', {
-    id: {
+
+const Cachorro = conexao.define('cachorros', {
+    cachorrosId: {
+        field: 'cachorros_id',
         primaryKey: true,
         autoIncrement: true,
         type: DataTypes.INTEGER
@@ -13,10 +16,12 @@ const Cachorro = conexao.define('cachorro', {
         allowNull: false
     },
 
-    dono: {
+
+    idCliente: {
+        field: 'id_cliente',
         type: DataTypes.INTEGER,
         references:{
-            model: 'clientes',
+            model: Cliente,
             key: 'id'
         }
     }

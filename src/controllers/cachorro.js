@@ -1,10 +1,10 @@
-const ServiceCachorro = require('../services/cachorro')
-const service = new ServiceCachorro()
+const ServicoCachorro = require('../services/cachorro.js')
+const servico = new ServicoCachorro()
 
 class ControllerCachorro{
     async GetCachorro(req,res){
         try{
-            const resultado = await service.GetCachorro(req.params.id)
+            const resultado = await servico.GetCachorro(req.params.id)
             res.status(200).json({
                 cachorro: resultado
             })
@@ -18,7 +18,7 @@ class ControllerCachorro{
 
     async GetCachorros(_,res){
         try{
-            const resultado = await service.GetCachorros()
+            const resultado = await servico.GetCachorros()
             res.status(200).json({
                 cachorros: resultado
             })
@@ -32,7 +32,7 @@ class ControllerCachorro{
 
     async AddCachorro(req,res){
         try{
-            const resultado = await service.AddCachorro(req.body.nome, req.body.dono)
+            const resultado = await servico.AddCachorro(req.body.nome, req.body.dono)
             res.status(200).json({
                 cachorro: resultado
             })
@@ -46,7 +46,7 @@ class ControllerCachorro{
 
     async UpdateCachorro(req,res){
         try{
-            const resultado = await service.UpdateCachorro(req.params.id, req.body.nome, req.body.dono)
+            const resultado = await servico.UpdateCachorro(req.params.id, req.body.nome, req.body.dono)
             res.status(200).json({
                 cliente: resultado
             })
@@ -60,7 +60,7 @@ class ControllerCachorro{
 
     async DeleteCachorro(req,res){
         try{
-            const resultado = await service.DeleteCachorro(req.params.id)
+            const resultado = await servico.DeleteCachorro(req.params.id)
             res.status(200).json({
                 cliente: resultado
             })

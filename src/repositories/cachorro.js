@@ -1,4 +1,4 @@
-const Cachorro = require('../models/cachorro')
+const Cachorro = require('../models/cachorro.js')
 
 class RepositorieCachorro{
 

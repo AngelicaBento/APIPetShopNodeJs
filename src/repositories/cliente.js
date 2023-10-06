@@ -1,13 +1,12 @@
-const Cliente = require('../models/cliente')
-const Cachorro = require('../models/cachorro')
+const Cliente = require('../models/cliente.js')
+const Cachorro = require('../models/cachorro.js')
 
 class RepositorieCliente{
 
     async GetCliente(id, transaction){
         return Cliente.findOne({
             where: { id },
-            transaction
-        },{
+            transaction,
             include: ['cachorros']
         })
     }
