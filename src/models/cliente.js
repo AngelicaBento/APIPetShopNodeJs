@@ -24,7 +24,7 @@ const Cliente = conexao.define('clientes', {
     updatedAt: false
 }) 
 
-Cliente.hasMany(Cachorro, { foreignKey: "idCliente"})
-Cachorro.belongsTo(Cliente, { foreignKey: "idCliente"})
+//Cliente.hasMany(Cachorro, { foreignKey: "idCliente"})
+//Cachorro.belongsTo(Cliente, { foreignKey: "idCliente"})
 
 module.exports = Cliente

@@ -1,6 +1,7 @@
 const Cliente = require('./cliente.js')
 const { DataTypes } = require('sequelize');
-const conexao = require('../database.js')
+const conexao = require('../database.js');
+const Atendimento = require('./atendimento.js');
 
 
 const Cachorro = conexao.define('cachorros', {
@@ -15,16 +16,15 @@ const Cachorro = conexao.define('cachorros', {
         type: DataTypes.STRING,
         allowNull: false
     },
-
-
-    idCliente: {
-        field: 'id_cliente',
+    
+   dono: {
         type: DataTypes.INTEGER,
-        references:{
+        references: {
             model: Cliente,
             key: 'id'
         }
     }
+
 }, {
     createdAt: false,
     updatedAt: false
