@@ -5,7 +5,7 @@ class ControllerAtendimento{
     async GetAtendimento(req,res){
         try{
             const resultado = await servico.GetAtendimento(req.params.id)
-            console.log(resultado)
+            //console.log(resultado)
             res.status(200).json({
                 atendimento: resultado
             })
@@ -35,7 +35,7 @@ class ControllerAtendimento{
         try{
             const resultado = await servico.AddAtendimento(req.body.dia, req.body.hora, req.body.valor, req.body.concluido)
             res.status(200).json({
-                atendimentos: resultado
+                atendimento: resultado
             })
         }catch(error){
             console.log(error)
@@ -51,7 +51,7 @@ class ControllerAtendimento{
             res.status(200).json({
                 atendimento: resultado
             })
-        }catch{
+        }catch{(error)
             console.log(error)
             res.status(500).json({
                 message: error
@@ -65,7 +65,7 @@ class ControllerAtendimento{
             res.status(200).json({
                 atendimento: resultado
             })
-        }catch{
+        }catch{(error)
             console.log(error)
             res.status(500).json({
                 message: error

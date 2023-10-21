@@ -3,7 +3,7 @@ const { DataTypes } = require('sequelize')
 const conexao = require('../database.js')
 
 
-const Atendimento = conexao.define('atendimento', {
+const Atendimento = conexao.define('atendimentos', {
     id: {
         primaryKey: true,
         autoIncrement: true,
@@ -27,10 +27,9 @@ const Atendimento = conexao.define('atendimento', {
 
     concluido: {
         type: DataTypes.STRING,
-        unique: true
     },
 
-    cachorroId: {
+    idCachorro: {
         type: DataTypes.INTEGER,
         references: {
             model: Cachorro,

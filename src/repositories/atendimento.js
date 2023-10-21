@@ -7,11 +7,11 @@ class RepositorieAtendimento{
         return Atendimento.findOne({
             where: { id },
             transaction,
-            include: ['cachorros']
+            include: ['cachorros_id']
         })
     }
 
-    async GetAtendimento(){
+    async GetAtendimentos(){
         return Atendimento.findAll()
     }
 
@@ -42,4 +42,4 @@ class RepositorieAtendimento{
     }
 }
 
-        module.exports = RepositorieAtendimento
+module.exports = RepositorieAtendimento

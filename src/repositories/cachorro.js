@@ -24,13 +24,13 @@ class RepositorieCachorro{
             nome: nome,
             dono: dono
         },{
-            where: { id }
+            where: { cachorros_id : id }
         })
     }
 
     async DeleteCachorro(id){
         return Cachorro.destroy({
-            where: { id }
+            where: { cachorros_id : id }
         })
     }
 }

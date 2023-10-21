@@ -50,7 +50,7 @@ class ControllerCachorro{
             res.status(200).json({
                 cliente: resultado
             })
-        }catch{
+        }catch(error){
             console.log(error)
             res.status(500).json({
                 message: error
@@ -64,7 +64,7 @@ class ControllerCachorro{
             res.status(200).json({
                 cliente: resultado
             })
-        }catch{
+        }catch(error){
             console.log(error)
             res.status(500).json({
                 message: error
